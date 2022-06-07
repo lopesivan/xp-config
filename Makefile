@@ -1,25 +1,14 @@
-all: set_all
+SRCS    = $(shell ls *.txt)
+TARGETS = $(SRCS:.txt=)
+PREFIX  = s-
+CLEAN   = $(foreach s,$(SRCS), $(addsuffix $(s:.txt=), $(PREFIX)))
 
-set_all: ninja make cmake_bear hub dotnet-console dotnet-solution
+all: $(TARGETS)
+clean: $(CLEAN)
 
-dotnet-console:
-	cat $@.txt |xp push -n $@
-dotnet-solution:
-	cat $@.txt |xp push -n $@
-ninja:
-	cat $@.txt |xp push -n $@
-make:
+$(TARGETS):
 	cat $@.txt |xp push -n $@
 
-cmake_bear:
-	cat $@.txt |xp push -n $@
-hub:
-	cat $@.txt |xp push -n $@
 
-clean:
-	xp rm s-hub
-	xp rm s-cmake_bear
-	xp rm s-make
-	xp rm s-ninja
-	xp rm dotnet-console
-	xp rm dotnet-solution
+$(CLEAN):
+	xp rm $@
