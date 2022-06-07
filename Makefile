@@ -9,6 +9,5 @@ clean: $(CLEAN)
 $(TARGETS):
 	cat $@.txt |xp push -n $@
 
-
 $(CLEAN):
 	xp rm $@
