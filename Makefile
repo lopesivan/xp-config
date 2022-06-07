@@ -1,6 +1,6 @@
 all: set_all
 
-set_all: ninja make cmake_bear hub
+set_all: ninja make cmake_bear hub dotnet-console dotnet-solution
 
 dotnet-console:
 	cat $@.txt |xp push -n $@
