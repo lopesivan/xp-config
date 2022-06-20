@@ -1,6 +1,7 @@
 GO111MODULE=on go get golang.org/x/tools/gopls@latest
 GO111MODULE=on go install github.com/go-delve/delve/cmd/dlv@latest
 dlv dap -l 127.0.0.1:38697 --log --log-output="dap"
+npm install -g write-good
 npm install -g typescript
 npm install -g typescript-language-server
 npm install -g vscode-css-languageserver-bin
