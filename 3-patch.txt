@@ -1,2 +1,1 @@
-git format-patch --stdout HEAD^ >  ../st-`date +%Y%m%d`-`git log -n1 --format=format:"%h"`.diff
-
+git format-patch --stdout HEAD^ >  ../st-$(git log -n1 --format=format:\"%s\"| tr '[[:upper:] ]' '[[:lower:]_]')-$(date +%Y%m%d)-$(git log -n1 --format=format:"%h").diff
