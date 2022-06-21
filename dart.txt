@@ -5,3 +5,15 @@ cd quickstart/
 dart pub global activate webdev
 tree .
 webdev serve
+#
+dart create -t console my_app
+cd my_app
+dart analyze
+dart test
+dart run bin/my_app.dart
+#
+You can also run pub commands using the dart tool:
+#
+dart pub get
+dart pub outdated
+dart pub upgrade
