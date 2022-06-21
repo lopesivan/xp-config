@@ -1,0 +1,7 @@
+dart pub global activate webdev
+#
+dart create -t web-simple quickstart
+cd quickstart/
+dart pub global activate webdev
+tree .
+webdev serve
